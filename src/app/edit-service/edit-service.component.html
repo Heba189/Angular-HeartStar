@@ -1,0 +1,335 @@
+
+
+
+<div class="container-fluid guiid">
+  <div class="row">
+      <div class="col-md-12">
+          <div class="" id="guid">
+         
+                <h2> </h2>
+                <nav aria-label="breadcrumb bg-light">
+                  <ol class="breadcrumb  lighten-3">
+                    <li class="breadcrumb-item"><i class="far fa-star mr-2 pink-text" aria-hidden="true"></i><a
+                        class="black-text" href="#">Home</a></li>
+                    <li class="breadcrumb-item pink-text active"><i class="far fa-star mx-2 pink-text" aria-hidden="true"></i> <a  [routerLink]="['/whatWeDo']"> ALL SERVICES  </a> ... {{ReturnName }}
+
+                    </li>
+                  </ol>
+                </nav>
+           
+      </div>
+      </div>
+  </div>
+</div>
+
+
+
+
+<div class="contentSpecific">
+<div class="star">
+      <a  [routerLink]="['/whatWeDo']"  mdbBtn floating="true" size="sm" gradient="" mdbWavesEffect>
+        <mdb-icon fas icon="star" class="star"></mdb-icon>
+        All Services 
+      </a>
+</div>
+ 
+
+<div class="container" *ngIf="ReturnId === 1">
+
+<mdb-card cascade="true" wider="true" reverse="true" class="my-4" *ngFor="let product of products ; let idx = index " >
+    <!--Card image-->
+
+    <span *ngIf ="idx ===0">
+        <div class="view view-cascade overlay waves-light" mdbWavesEffect>
+            <mdb-card-img  [src]="product.imgUrl"></mdb-card-img>
+            <a>
+              <div class="mask rgba-white-slight"></div>
+            </a>
+        </div>
+
+          <!--/Card image-->
+        
+          <!-- Card content -->
+          <mdb-card-body cascade="true" class="text-center">
+        
+            <!--Title-->
+            <mdb-card-title>
+              <h4>
+                <strong>{{product.name}}</strong>
+              </h4>
+            </mdb-card-title>
+        
+          
+        
+            <mdb-card-text>
+            {{product.content}}
+            </mdb-card-text>
+        
+            <!--Linkedin-->
+            <a class="px-2 icons-sm li-ic">
+              <mdb-icon fab icon="linkedin-in"> </mdb-icon>
+            </a>
+            <!--Twitter-->
+            <a class="px-2 icons-sm tw-ic">
+              <mdb-icon fab icon="twitter"> </mdb-icon>
+            </a>
+            <!--Dribbble-->
+            <a class="px-2 icons-sm fb-ic">
+              <mdb-icon fab icon="facebook-f"> </mdb-icon>
+            </a>
+          </mdb-card-body>
+    </span>
+
+
+
+
+
+
+
+
+  </mdb-card>
+</div>
+
+  <!--------------second element--------------------->
+
+    <div class="container" *ngIf="ReturnId === 2">
+      
+    <mdb-card cascade="true" wider="true" reverse="true" class="my-4" *ngFor="let product of products ; let idx = index " >
+  <!--Card image-->
+        <span *ngIf ="idx ===1">
+        <div class="view view-cascade overlay waves-light" mdbWavesEffect>
+            <mdb-card-img  [src]="product.imgUrl"></mdb-card-img>
+            <a>
+              <div class="mask rgba-white-slight"></div>
+            </a>
+        </div>
+
+          <!--/Card image-->
+        
+          <!-- Card content -->
+          <mdb-card-body cascade="true" class="text-center">
+        
+            <!--Title-->
+            <mdb-card-title>
+              <h4>
+                <strong>{{product.name}}</strong>
+              </h4>
+            </mdb-card-title>
+        
+          
+        
+            <mdb-card-text>
+            {{product.content}}
+            </mdb-card-text>
+        
+            <!--Linkedin-->
+            <a class="px-2 icons-sm li-ic">
+              <mdb-icon fab icon="linkedin-in"> </mdb-icon>
+            </a>
+            <!--Twitter-->
+            <a class="px-2 icons-sm tw-ic">
+              <mdb-icon fab icon="twitter"> </mdb-icon>
+            </a>
+            <!--Dribbble-->
+            <a class="px-2 icons-sm fb-ic">
+              <mdb-icon fab icon="facebook-f"> </mdb-icon>
+            </a>
+          </mdb-card-body>
+    </span>
+    </mdb-card>
+    </div>
+   
+   
+  <!------------------third element-------------------------------->
+
+<div class="container" *ngIf="ReturnId === 3">
+  <mdb-card cascade="true" wider="true" reverse="true" class="my-4" *ngFor="let product of products ; let idx = index " > 
+  <span *ngIf ="idx ===2">
+    <div class="view view-cascade overlay waves-light" mdbWavesEffect>
+        <mdb-card-img  [src]="product.imgUrl"></mdb-card-img>
+        <a>
+          <div class="mask rgba-white-slight"></div>
+        </a>
+    </div>
+
+      <!--/Card image-->
+    
+      <!-- Card content -->
+      <mdb-card-body cascade="true" class="text-center">
+    
+        <!--Title-->
+        <mdb-card-title>
+          <h4>
+            <strong>{{product.name}}</strong>
+          </h4>
+        </mdb-card-title>
+    
+      
+    
+        <mdb-card-text>
+        {{product.content}}
+        </mdb-card-text>
+    
+        <!--Linkedin-->
+        <a class="px-2 icons-sm li-ic">
+          <mdb-icon fab icon="linkedin-in"> </mdb-icon>
+        </a>
+        <!--Twitter-->
+        <a class="px-2 icons-sm tw-ic">
+          <mdb-icon fab icon="twitter"> </mdb-icon>
+        </a>
+        <!--Dribbble-->
+        <a class="px-2 icons-sm fb-ic">
+          <mdb-icon fab icon="facebook-f"> </mdb-icon>
+        </a>
+      </mdb-card-body>
+</span>
+</mdb-card>
+</div>
+
+<!-------------------------- 4 element------------------------------>
+<div class="container" *ngIf="ReturnId === 4">
+  <mdb-card cascade="true" wider="true" reverse="true" class="my-4" *ngFor="let product of products ; let idx = index " > 
+<span *ngIf ="idx ===3">
+  <div class="view view-cascade overlay waves-light" mdbWavesEffect>
+      <mdb-card-img  [src]="product.imgUrl"></mdb-card-img>
+      <a>
+        <div class="mask rgba-white-slight"></div>
+      </a>
+  </div>
+
+    <!--/Card image-->
+  
+    <!-- Card content -->
+    <mdb-card-body cascade="true" class="text-center">
+  
+      <!--Title-->
+      <mdb-card-title>
+        <h4>
+          <strong>{{product.name}}</strong>
+        </h4>
+      </mdb-card-title>
+  
+    
+  
+      <mdb-card-text>
+      {{product.content}}
+      </mdb-card-text>
+  
+      <!--Linkedin-->
+      <a class="px-2 icons-sm li-ic">
+        <mdb-icon fab icon="linkedin-in"> </mdb-icon>
+      </a>
+      <!--Twitter-->
+      <a class="px-2 icons-sm tw-ic">
+        <mdb-icon fab icon="twitter"> </mdb-icon>
+      </a>
+      <!--Dribbble-->
+      <a class="px-2 icons-sm fb-ic">
+        <mdb-icon fab icon="facebook-f"> </mdb-icon>
+      </a>
+    </mdb-card-body>
+</span>
+</mdb-card>
+</div>
+
+
+
+<!---------------------- 5 element----------------------------->
+<div class="container" *ngIf="ReturnId===5">
+  <mdb-card cascade="true" wider="true" reverse="true" class="my-4" *ngFor="let product of products ; let idx = index " > 
+<span *ngIf ="idx ===4">
+  <div class="view view-cascade overlay waves-light" mdbWavesEffect>
+      <mdb-card-img  [src]="product.imgUrl"></mdb-card-img>
+      <a>
+        <div class="mask rgba-white-slight"></div>
+      </a>
+  </div>
+
+    <!--/Card image-->
+  
+    <!-- Card content -->
+    <mdb-card-body cascade="true" class="text-center">
+  
+      <!--Title-->
+      <mdb-card-title>
+        <h4>
+          <strong>{{product.name}}</strong>
+        </h4>
+      </mdb-card-title>
+  
+    
+  
+      <mdb-card-text>
+      {{product.content}}
+      </mdb-card-text>
+  
+      <!--Linkedin-->
+      <a class="px-2 icons-sm li-ic">
+        <mdb-icon fab icon="linkedin-in"> </mdb-icon>
+      </a>
+      <!--Twitter-->
+      <a class="px-2 icons-sm tw-ic">
+        <mdb-icon fab icon="twitter"> </mdb-icon>
+      </a>
+      <!--Dribbble-->
+      <a class="px-2 icons-sm fb-ic">
+        <mdb-icon fab icon="facebook-f"> </mdb-icon>
+      </a>
+    </mdb-card-body>
+</span>
+</mdb-card>
+</div>
+
+
+<!------------------------- 6 element ------------------------------------->
+<div class="container" *ngIf="ReturnId ===6">
+  <mdb-card cascade="true" wider="true" reverse="true" class="my-4" *ngFor="let product of products ; let idx = index " > 
+<span *ngIf ="idx ===5">
+  <div class="view view-cascade overlay waves-light" mdbWavesEffect>
+      <mdb-card-img  [src]="product.imgUrl"></mdb-card-img>
+      <a>
+        <div class="mask rgba-white-slight"></div>
+      </a>
+  </div>
+
+    <!--/Card image-->
+  
+    <!-- Card content -->
+    <mdb-card-body cascade="true" class="text-center">
+  
+      <!--Title-->
+      <mdb-card-title>
+        <h4>
+          <strong>{{product.name}}</strong>
+        </h4>
+      </mdb-card-title>
+  
+    
+  
+      <mdb-card-text>
+      {{product.content}}
+      </mdb-card-text>
+  
+      <!--Linkedin-->
+      <a class="px-2 icons-sm li-ic">
+        <mdb-icon fab icon="linkedin-in"> </mdb-icon>
+      </a>
+      <!--Twitter-->
+      <a class="px-2 icons-sm tw-ic">
+        <mdb-icon fab icon="twitter"> </mdb-icon>
+      </a>
+      <!--Dribbble-->
+      <a class="px-2 icons-sm fb-ic">
+        <mdb-icon fab icon="facebook-f"> </mdb-icon>
+      </a>
+    </mdb-card-body>
+</span>
+</mdb-card>
+</div>
+
+
+</div>
+
+
+<app-footer2></app-footer2>

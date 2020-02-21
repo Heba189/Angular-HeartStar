@@ -1,0 +1,773 @@
+<div class="container-fluid header-H">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="">
+
+                <div class="card m-5">
+                  <!---------------------------->
+                    <div class="card-body">
+                  
+                      <h4 class="text-center font-weight-bold mt-3 mb-4 pb-4">Price Filter</h4>
+                      <hr>
+                  
+                      <h4> FILTERPrice: $10 — $20 </h4>
+
+                      <form class="range-field my-5 d-flex">
+                           <input id="calculatorSlider" [value]="GetValue" (scroll)="GetValue=$event.target.value ; onKeyUp()"  class="no-border bg-pink text-center" type="range" value="20" min="0" max="30" />
+                      </form> 
+                      <button type="button" class="btn btn-warning">Warning</button>
+                   
+                  
+                    </div>
+
+                   
+
+                 <!--------------------------------->   
+              
+                          <div class="list-group" id="list-tab" role="tablist">
+                              <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home"
+                                role="tab" aria-controls="home"><img src="//heartstar.axiomthemes.com/wp-content/uploads/2018/06/4.png" width="34" height="30" alt="Category icon">ACCESSORIES</a>
+                              <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile"
+                                role="tab" aria-controls="profile"><img  src="//heartstar.axiomthemes.com/wp-content/uploads/2018/06/5.png" width="34" height="29" alt="Category icon">FUNNY GIFTS</a>
+                              <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages"
+                                role="tab" aria-controls="messages"><img src="//heartstar.axiomthemes.com/wp-content/uploads/2018/06/3.png" width="34" height="30" alt="Category icon">GADJETS</a>
+                              <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings"
+                                role="tab" aria-controls="settings"><img src="//heartstar.axiomthemes.com/wp-content/uploads/2018/06/1.png" width="34" height="30" alt="Category icon">PARTY GIFTS</a>
+                               <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings"
+                                role="tab" aria-controls="settings"><img src="//heartstar.axiomthemes.com/wp-content/uploads/2018/06/2.png" width="34" height="30" alt="Category icon">TASTY GIFTS</a> 
+                        </div>
+                        <div class="tags py-3 px-1">
+                        
+                          <button type="button" class="btn btn-warning">FUN</button>
+                          <button type="button" class="btn btn-warning">GIFT</button>
+                          <button type="button" class="btn btn-warning">HAPPY</button>
+                          <button type="button" class="btn btn-warning">KIDS</button>
+                          <button type="button" class="btn btn-warning">POPULAR</button>
+                          <button type="button" class="btn btn-warning">SHOPPING</button>
+                          <button type="button" class="btn btn-warning">SURPRISE</button>
+                          <button type="button" class="btn btn-warning">UNIQUE</button>
+                          <button type="button" class="btn btn-warning">UNIVERSAL</button>
+                       
+                        </div>
+                    
+                     
+                  </div>
+            </div>
+        </div>
+
+
+                 <div class="col-md-8">  
+
+                  <!------------------------Dropdown bottom--------------------------------->
+                  <div class="container mt-5">
+                    <div class="row">
+                    
+                        <div class="col-8 showIcon">
+                          <span (click)="large()"    active >
+                                   <mdb-icon class="mr-1 p-1 icoon1"  fas icon="th-large"     [ngClass]="{ListClass: largeB  === true }"  ></mdb-icon>
+                          </span>
+                          <span (click)="list()"  active>
+                               <mdb-icon class="icoon1" fas icon="th-list"   [ngClass]="{ListClass: listB === true }"   ></mdb-icon>
+                          </span>
+                        
+                        </div>
+
+                        <div class="col-4">
+
+                              <div class="dropdown d1 ml-auto" mdbDropdown>
+
+                                    <a mdbDropdownToggle mdbBtn color="warning" class="dropdown-toggle waves-light" type="button"
+                                      mdbWavesEffect>
+                                      Sort by Price
+                                    </a>
+                                
+                                  <div class="dropdown-menu dropdown-warning">
+                                    <!-- <a (click)="lth"  class="dropdown-item" >Low to Hight</a>
+                                    <a (click)="htl =!htl = !lth" class="dropdown-item">Hight to Low</a> -->
+                                  
+                                    <a (click)="lthClick()"  class="dropdown-item" >Low to Hight</a>
+                                    <a (click)="htlClick()"  class="dropdown-item">Hight to Low</a>  
+
+                                  </div>
+                            </div>
+
+                        
+<!-- 
+                            <button (click)="onReload()" mdbBtn type="button" color="deep-purple" mdbWavesEffect>Reload Page</button> -->
+                        </div>
+
+                  </div>
+                  <!-- {{ collection | orderBy: expression : reverse : caseInsensitive : comparator }} -->
+                  </div>
+                  
+                  <!-- <ul>
+                    <li *ngFor="let item of array | orderBy: order">
+                      {{ item.name }}
+                    </li>
+                  </ul>  -->
+                  <!------------------------end DropDown Bottom--------------------------------->
+    <!-- <ng-template >             -->
+        <div class="tab-content" id="nav-tabContent">
+          
+                                <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list"> 
+    <div *ngIf ="largeB">
+
+                                                   <div class="row mt-5" *ngIf="lth" > 
+                                                      
+
+                                                      <div class="col-md-4" *ngFor="let ele of SelectArray |  orderBy: order : false: false">
+                                                              <div class="card mb-4">
+                                                                        <div class="view overlay">
+                                                                              <img class="card-img-top" [src]="ele.imgUrl" alt="Card image cap">
+                                                                              <a href="#!">
+                                                                                <div class="mask rgba-white-slight"></div>
+                                                                              </a>
+                                                                        </div>
+                                                                      <div class="card-body p-3">
+                                                                              <h5 class="card-title font-weight-bold fuchsia-rose-text mb-0">{{ele.name}}</h5>
+                                                                           
+                                                                              <ul class="list-unstyled list-inline my-2">
+                                                                                <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                                                <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                                                <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                                                <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                                                <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                                              </ul>
+                                                                              <p class="chili-pepper-text mb-0"> {{ele.price}}</p>
+                                                                      </div>
+                                                              </div>
+                                                      </div>
+                                             
+                                                  </div> 
+                                                 
+                                                     <div class="row mt-5" *ngIf="htl"> 
+                                                          <div class="col-md-4" *ngFor="let ele of SelectArray |  orderBy: order : true : false">
+                                                                  <div class="card mb-4">
+                                                                            <div class="view overlay">
+                                                                                  <img class="card-img-top" [src]="ele.imgUrl" alt="Card image cap">
+                                                                                  <a href="#!">
+                                                                                    <div class="mask rgba-white-slight"></div>
+                                                                                  </a>
+                                                                            </div>
+                                                                          <div class="card-body p-3">
+                                                                                  <h5 class="card-title font-weight-bold fuchsia-rose-text mb-0">{{ele.name}}</h5>
+                                                                               
+                                                                                  <ul class="list-unstyled list-inline my-2">
+                                                                                    <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                                                    <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                                                    <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                                                    <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                                                    <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                                                  </ul>
+                                                                                  <p class="chili-pepper-text mb-0"> {{ele.price}}</p>
+                                                                          </div>
+                                                                  </div>
+                                                          </div>
+                                                     </div> 
+                                                
+     </div>                                       
+                                </div>                  
+                                            
+       
+        
+        <div *ngIf="listB">
+                                 
+
+
+                                    <div class="row mt-5" *ngIf="lth" > 
+                                      
+
+                                      <div class="col-md-12" *ngFor="let ele of SelectArray |  orderBy: order : false: false">
+                                              <div class="card mb-4">
+                                                <div class="row">
+                                                  <div class="col-md-4">
+                                                     <div class="view overlay">
+                                                              <img class="card-img-top" [src]="ele.imgUrl" alt="Card image cap">
+                                                              <a href="#!">
+                                                                <div class="mask rgba-white-slight"></div>
+                                                              </a>
+                                                        </div>
+                                                  </div>
+                                                  <div class="col-md-8">
+                                                     <div class="card-body p-3">
+                                                              <h5 class="card-title font-weight-bold fuchsia-rose-text mb-0">{{ele.name}}</h5>
+                                                            
+                                                              <ul class="list-unstyled list-inline my-2">
+                                                                <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                                <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                                <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                                <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                                <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                              </ul>
+                                                              <p class="chili-pepper-text mb-0"> {{ele.price}}</p>
+                                                      </div>
+                                                  </div>
+                                                </div>
+                                                       
+                                                     
+                                              </div>
+                                      </div>
+                              
+                                  </div> 
+                                  
+                                      <div class="row mt-5" *ngIf="htl"> 
+                                          <div class="col-md-12" *ngFor="let ele of SelectArray |  orderBy: order : true : false">
+                                                  <div class="card mb-4">
+                                                    <div class="row">
+                                                      <div class="col-md-4">
+                                                         <div class="view overlay">
+                                                                  <img class="card-img-top" [src]="ele.imgUrl" alt="Card image cap">
+                                                                  <a href="#!">
+                                                                    <div class="mask rgba-white-slight"></div>
+                                                                  </a>
+                                                            </div>
+                                                      </div>
+                                                      <div class="col-md-8">
+                                                         <div class="card-body p-3">
+                                                                  <h5 class="card-title font-weight-bold fuchsia-rose-text mb-0">{{ele.name}}</h5>
+                                                                
+                                                                  <ul class="list-unstyled list-inline my-2">
+                                                                    <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                                    <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                                    <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                                    <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                                    <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                                  </ul>
+                                                                  <p class="chili-pepper-text mb-0"> {{ele.price}}</p>
+                                                          </div>
+                                                      </div>
+                                                    </div>   
+                                                  </div>
+                                          </div>
+                                      </div> 
+                                
+                        
+                        
+        </div>
+                                                    
+                                                      
+                                         
+                                       
+
+
+
+                                <!------------------------------------------------------acessories end-------------------------------------------------------------------------->
+                                <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+                                  <div class="row mt-5"> 
+                                  
+                                      
+                                    <div class="col-md-4">
+                                            <div class="card mb-4">
+                                                      <div class="view overlay">
+                                                            <img class="card-img-top" src="assets/FunnyGift/p1.jpg" alt="Card image cap">
+                                                            <a href="#!">
+                                                              <div class="mask rgba-white-slight"></div>
+                                                            </a>
+                                                      </div>
+                                                    <div class="card-body p-3">
+                                                            <h5 class="card-title font-weight-bold fuchsia-rose-text mb-0">Indie Funk</h5>
+                                                            <p class="aqua-sky-text mb-0">Generation Funk</p>
+                                                            <ul class="list-unstyled list-inline my-2">
+                                                              <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                              <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                              <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                              <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                              <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                            </ul>
+                                                            <p class="chili-pepper-text mb-0">19,99 $</p>
+                                                    </div>
+                                            </div>
+                                    </div>
+                                        <div class="col-md-4">
+                                          <div class="card mb-4">
+                                                    <div class="view overlay">
+                                                          <img class="card-img-top" src="assets/FunnyGift/p2.jpg" alt="Card image cap">
+                                                          <a href="#!">
+                                                            <div class="mask rgba-white-slight"></div>
+                                                          </a>
+                                                    </div>
+                                                  <div class="card-body p-3">
+                                                          <h5 class="card-title font-weight-bold fuchsia-rose-text mb-0">Indie Funk</h5>
+                                                          <p class="aqua-sky-text mb-0">Generation Funk</p>
+                                                          <ul class="list-unstyled list-inline my-2">
+                                                            <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                            <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                            <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                            <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                            <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                          </ul>
+                                                          <p class="chili-pepper-text mb-0">19,99 $</p>
+                                                  </div>
+                                          </div>
+                                  </div>
+
+                                  <div class="col-md-4">
+                                          <div class="card mb-4">
+                                                    <div class="view overlay">
+                                                          <img class="card-img-top" src="assets/FunnyGift/p3.jpg" alt="Card image cap">
+                                                          <a href="#!">
+                                                            <div class="mask rgba-white-slight"></div>
+                                                          </a>
+                                                    </div>
+                                                  <div class="card-body p-3">
+                                                          <h5 class="card-title font-weight-bold fuchsia-rose-text mb-0">Indie Funk</h5>
+                                                          <p class="aqua-sky-text mb-0">Generation Funk</p>
+                                                          <ul class="list-unstyled list-inline my-2">
+                                                            <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                            <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                                <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                                <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                                <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                              </ul>
+                                                              <p class="chili-pepper-text mb-0">19,99 $</p>
+                                                      </div>
+                                              </div>
+                              </div> 
+                              </div>
+
+                              <div class="row mt-5"> 
+                        
+                            
+                                <div class="col-md-4">
+                                        <div class="card mb-4">
+                                                  <div class="view overlay">
+                                                        <img class="card-img-top" src="assets/FunnyGift/p4.jpg" alt="Card image cap">
+                                                        <a href="#!">
+                                                          <div class="mask rgba-white-slight"></div>
+                                                        </a>
+                                                  </div>
+                                                <div class="card-body p-3">
+                                                        <h5 class="card-title font-weight-bold fuchsia-rose-text mb-0">Indie Funk</h5>
+                                                        <p class="aqua-sky-text mb-0">Generation Funk</p>
+                                                        <ul class="list-unstyled list-inline my-2">
+                                                          <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                          <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                          <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                          <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                          <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                        </ul>
+                                                        <p class="chili-pepper-text mb-0">19,99 $</p>
+                                                </div>
+                                        </div>
+                                </div>
+                                    <div class="col-md-4">
+                                      <div class="card mb-4">
+                                                <div class="view overlay">
+                                                      <img class="card-img-top" src="assets/FunnyGift/p5.jpg" alt="Card image cap">
+                                                      <a href="#!">
+                                                        <div class="mask rgba-white-slight"></div>
+                                                      </a>
+                                                </div>
+                                              <div class="card-body p-3">
+                                                      <h5 class="card-title font-weight-bold fuchsia-rose-text mb-0">Indie Funk</h5>
+                                                      <p class="aqua-sky-text mb-0">Generation Funk</p>
+                                                      <ul class="list-unstyled list-inline my-2">
+                                                        <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                        <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                        <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                        <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                        <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                      </ul>
+                                                      <p class="chili-pepper-text mb-0">19,99 $</p>
+                                              </div>
+                                      </div>
+                              </div>
+
+                              <div class="col-md-4">
+                                      <div class="card mb-4">
+                                                <div class="view overlay">
+                                                      <img class="card-img-top" src="assets/FunnyGift/p6.jpg" alt="Card image cap">
+                                                      <a href="#!">
+                                                        <div class="mask rgba-white-slight"></div>
+                                                      </a>
+                                                </div>
+                                              <div class="card-body p-3">
+                                                      <h5 class="card-title font-weight-bold fuchsia-rose-text mb-0">Indie Funk</h5>
+                                                      <p class="aqua-sky-text mb-0">Generation Funk</p>
+                                                      <ul class="list-unstyled list-inline my-2">
+                                                        <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                        <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                            <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                            <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                            <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                          </ul>
+                                                          <p class="chili-pepper-text mb-0">19,99 $</p>
+                                                  </div>
+                                          </div>
+                          </div> 
+                          </div>  
+                                </div>
+                                <!----------------------------------------------------Funny gift end-------------------------------------------------------------------------------->
+                                <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
+                                  <div class="row mt-5"> 
+                                  
+                                      
+                                    <div class="col-md-4">
+                                            <div class="card mb-4">
+                                                      <div class="view overlay">
+                                                            <img class="card-img-top" src="assets/gadjets/p6.jpg" alt="Card image cap">
+                                                            <a href="#!">
+                                                              <div class="mask rgba-white-slight"></div>
+                                                            </a>
+                                                      </div>
+                                                    <div class="card-body p-3">
+                                                            <h5 class="card-title font-weight-bold fuchsia-rose-text mb-0">Indie Funk</h5>
+                                                            <p class="aqua-sky-text mb-0">Generation Funk</p>
+                                                            <ul class="list-unstyled list-inline my-2">
+                                                              <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                              <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                              <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                              <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                              <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                            </ul>
+                                                            <p class="chili-pepper-text mb-0">19,99 $</p>
+                                                    </div>
+                                            </div>
+                                    </div>
+                                        <div class="col-md-4">
+                                          <div class="card mb-4">
+                                                    <div class="view overlay">
+                                                          <img class="card-img-top" src="assets/gadjets/p5.jpg" alt="Card image cap">
+                                                          <a href="#!">
+                                                            <div class="mask rgba-white-slight"></div>
+                                                          </a>
+                                                    </div>
+                                                  <div class="card-body p-3">
+                                                          <h5 class="card-title font-weight-bold fuchsia-rose-text mb-0">Indie Funk</h5>
+                                                          <p class="aqua-sky-text mb-0">Generation Funk</p>
+                                                          <ul class="list-unstyled list-inline my-2">
+                                                            <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                            <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                            <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                            <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                            <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                          </ul>
+                                                          <p class="chili-pepper-text mb-0">19,99 $</p>
+                                                  </div>
+                                          </div>
+                                  </div>
+
+                                  <div class="col-md-4">
+                                          <div class="card mb-4">
+                                                    <div class="view overlay">
+                                                          <img class="card-img-top" src="assets/gadjets/p3.jpg" alt="Card image cap">
+                                                          <a href="#!">
+                                                            <div class="mask rgba-white-slight"></div>
+                                                          </a>
+                                                    </div>
+                                                  <div class="card-body p-3">
+                                                          <h5 class="card-title font-weight-bold fuchsia-rose-text mb-0">Indie Funk</h5>
+                                                          <p class="aqua-sky-text mb-0">Generation Funk</p>
+                                                          <ul class="list-unstyled list-inline my-2">
+                                                            <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                            <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                                <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                                <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                                <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                              </ul>
+                                                              <p class="chili-pepper-text mb-0">19,99 $</p>
+                                                      </div>
+                                              </div>
+                              </div> 
+                              </div>
+
+                              <div class="row mt-5"> 
+                        
+                            
+                                <div class="col-md-4">
+                                        <div class="card mb-4">
+                                                  <div class="view overlay">
+                                                        <img class="card-img-top" src="assets/gadjets/p1.jpg" alt="Card image cap">
+                                                        <a href="#!">
+                                                          <div class="mask rgba-white-slight"></div>
+                                                        </a>
+                                                  </div>
+                                                <div class="card-body p-3">
+                                                        <h5 class="card-title font-weight-bold fuchsia-rose-text mb-0">Indie Funk</h5>
+                                                        <p class="aqua-sky-text mb-0">Generation Funk</p>
+                                                        <ul class="list-unstyled list-inline my-2">
+                                                          <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                          <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                          <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                          <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                          <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                        </ul>
+                                                        <p class="chili-pepper-text mb-0">19,99 $</p>
+                                                </div>
+                                        </div>
+                                </div>
+                                    <div class="col-md-4">
+                                      <div class="card mb-4">
+                                                <div class="view overlay">
+                                                      <img class="card-img-top" src="assets/gadjets/p2.jpg" alt="Card image cap">
+                                                      <a href="#!">
+                                                        <div class="mask rgba-white-slight"></div>
+                                                      </a>
+                                                </div>
+                                              <div class="card-body p-3">
+                                                      <h5 class="card-title font-weight-bold fuchsia-rose-text mb-0">Indie Funk</h5>
+                                                      <p class="aqua-sky-text mb-0">Generation Funk</p>
+                                                      <ul class="list-unstyled list-inline my-2">
+                                                        <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                        <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                        <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                        <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                        <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                      </ul>
+                                                      <p class="chili-pepper-text mb-0">19,99 $</p>
+                                              </div>
+                                      </div>
+                              </div>
+
+                              <div class="col-md-4">
+                                      <div class="card mb-4">
+                                                <div class="view overlay">
+                                                      <img class="card-img-top" src="assets/gadjets/p3.jpg" alt="Card image cap">
+                                                      <a href="#!">
+                                                        <div class="mask rgba-white-slight"></div>
+                                                      </a>
+                                                </div>
+                                              <div class="card-body p-3">
+                                                      <h5 class="card-title font-weight-bold fuchsia-rose-text mb-0">Indie Funk</h5>
+                                                      <p class="aqua-sky-text mb-0">Generation Funk</p>
+                                                      <ul class="list-unstyled list-inline my-2">
+                                                        <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                        <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                            <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                            <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                            <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                          </ul>
+                                                          <p class="chili-pepper-text mb-0">19,99 $</p>
+                                                  </div>
+                                          </div>
+                          </div> 
+                          </div>  
+                                </div>
+                                <!----------------------------------------------------------- gadjets --------------------------------------------------------------------->
+                                <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
+                                  <div class="row mt-5"> 
+                                  
+                                      
+                                    <div class="col-md-4">
+                                            <div class="card mb-4">
+                                                      <div class="view overlay">
+                                                            <img class="card-img-top" src="assets/tasty/p4.jpg" alt="Card image cap">
+                                                            <a href="#!">
+                                                              <div class="mask rgba-white-slight"></div>
+                                                            </a>
+                                                      </div>
+                                                    <div class="card-body p-3">
+                                                            <h5 class="card-title font-weight-bold fuchsia-rose-text mb-0">Indie Funk</h5>
+                                                            <p class="aqua-sky-text mb-0">Generation Funk</p>
+                                                            <ul class="list-unstyled list-inline my-2">
+                                                              <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                              <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                              <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                              <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                              <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                            </ul>
+                                                            <p class="chili-pepper-text mb-0">19,99 $</p>
+                                                    </div>
+                                            </div>
+                                    </div>
+                                        <div class="col-md-4">
+                                          <div class="card mb-4">
+                                                    <div class="view overlay">
+                                                          <img class="card-img-top" src="assets/tasty/p5.jpg" alt="Card image cap">
+                                                          <a href="#!">
+                                                            <div class="mask rgba-white-slight"></div>
+                                                          </a>
+                                                    </div>
+                                                  <div class="card-body p-3">
+                                                          <h5 class="card-title font-weight-bold fuchsia-rose-text mb-0">Indie Funk</h5>
+                                                          <p class="aqua-sky-text mb-0">Generation Funk</p>
+                                                          <ul class="list-unstyled list-inline my-2">
+                                                            <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                            <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                            <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                            <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                            <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                          </ul>
+                                                          <p class="chili-pepper-text mb-0">19,99 $</p>
+                                                  </div>
+                                          </div>
+                                  </div>
+
+                                  <div class="col-md-4">
+                                          <div class="card mb-4">
+                                                    <div class="view overlay">
+                                                          <img class="card-img-top" src="assets/tasty/p3.jpg" alt="Card image cap">
+                                                          <a href="#!">
+                                                            <div class="mask rgba-white-slight"></div>
+                                                          </a>
+                                                    </div>
+                                                  <div class="card-body p-3">
+                                                          <h5 class="card-title font-weight-bold fuchsia-rose-text mb-0">Indie Funk</h5>
+                                                          <p class="aqua-sky-text mb-0">Generation Funk</p>
+                                                          <ul class="list-unstyled list-inline my-2">
+                                                            <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                            <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                                <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                                <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                                <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                              </ul>
+                                                              <p class="chili-pepper-text mb-0">19,99 $</p>
+                                                      </div>
+                                              </div>
+                              </div> 
+                              </div>
+
+                              <div class="row mt-5"> 
+                        
+                            
+                                <div class="col-md-4">
+                                        <div class="card mb-4">
+                                                  <div class="view overlay">
+                                                        <img class="card-img-top" src="assets/tasty/p1.jpg" alt="Card image cap">
+                                                        <a href="#!">
+                                                          <div class="mask rgba-white-slight"></div>
+                                                        </a>
+                                                  </div>
+                                                <div class="card-body p-3">
+                                                        <h5 class="card-title font-weight-bold fuchsia-rose-text mb-0">Indie Funk</h5>
+                                                        <p class="aqua-sky-text mb-0">Generation Funk</p>
+                                                        <ul class="list-unstyled list-inline my-2">
+                                                          <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                          <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                          <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                          <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                          <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                        </ul>
+                                                        <p class="chili-pepper-text mb-0">19,99 $</p>
+                                                </div>
+                                        </div>
+                                </div>
+                                    <div class="col-md-4">
+                                      <div class="card mb-4">
+                                                <div class="view overlay">
+                                                      <img class="card-img-top" src="assets/tasty/p2.jpg" alt="Card image cap">
+                                                      <a href="#!">
+                                                        <div class="mask rgba-white-slight"></div>
+                                                      </a>
+                                                </div>
+                                              <div class="card-body p-3">
+                                                      <h5 class="card-title font-weight-bold fuchsia-rose-text mb-0">Indie Funk</h5>
+                                                      <p class="aqua-sky-text mb-0">Generation Funk</p>
+                                                      <ul class="list-unstyled list-inline my-2">
+                                                        <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                        <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                        <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                        <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                        <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                      </ul>
+                                                      <p class="chili-pepper-text mb-0">19,99 $</p>
+                                              </div>
+                                      </div>
+                              </div>
+
+                              <div class="col-md-4">
+                                      <div class="card mb-4">
+                                                <div class="view overlay">
+                                                      <img class="card-img-top" src="assets/tasty/p3.jpg" alt="Card image cap">
+                                                      <a href="#!">
+                                                        <div class="mask rgba-white-slight"></div>
+                                                      </a>
+                                                </div>
+                                              <div class="card-body p-3">
+                                                      <h5 class="card-title font-weight-bold fuchsia-rose-text mb-0">Indie Funk</h5>
+                                                      <p class="aqua-sky-text mb-0">Generation Funk</p>
+                                                      <ul class="list-unstyled list-inline my-2">
+                                                        <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                        <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                            <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                            <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                            <li class="list-inline-item mx-0"><i class="fas fa-star mimosa-text"></i></li>
+                                                          </ul>
+                                                          <p class="chili-pepper-text mb-0">19,99 $</p>
+                                                  </div>
+                                          </div>
+                          </div> 
+                          </div>  
+                          <!---------------------------------------------------------------tasty gift------------------------------------------------------------------------------------------->
+                                </div>
+       
+ 
+
+   
+  
+
+
+   
+                </div>
+                </div>
+              </div>
+              </div>
+                        
+                      
+       
+       
+
+
+
+<!-- <script>
+  const slider = $("#calculatorSlider");
+const developerBtn = $("#developerBtn");
+const corporateBtn = $("#corporateBtn");
+const privateBtn = $("#privateBtn");
+const reseller = $("#resellerEarnings");
+const client = $("#clientPrice");
+const percentageBonus = 30; // = 30%
+const license = {
+  corpo: {
+    active: true,
+    price: 319,
+  },
+  dev: {
+    active: false,
+    price: 149,
+  },
+  priv: {
+    active: false,
+    price: 79,
+  }
+}
+
+function calculate(price, value) {
+  client.text((Math.round((price - (value / 100 * price)))) + '$');
+  reseller.text((Math.round(((percentageBonus - value) / 100 * price))) + '$')
+}
+
+function reset(price) {
+  slider.val(0);
+  client.text(price + '$');
+  reseller.text((Math.round((percentageBonus / 100 * price))) + '$');
+}
+developerBtn.on('click', function(e) {
+  license.dev.active = true;
+  license.corpo.active = false;
+  license.priv.active = false;
+  reset(license.dev.price)
+});
+privateBtn.on('click', function(e) {
+  license.dev.active = false;
+  license.corpo.active = false;
+  license.priv.active = true;
+  reset(license.priv.price);
+});
+corporateBtn.on('click', function(e) {
+  license.dev.active = false;
+  license.corpo.active = true;
+  license.priv.active = false;
+  reset(license.corpo.price);
+});
+slider.on("input change", function(e) {
+if (license.priv.active) {
+  calculate(license.priv.price, $(this).val());
+} else if (license.corpo.active) {
+  calculate(license.corpo.price, $(this).val());
+} else if (license.dev.active) {
+  calculate(license.dev.price, $(this).val());
+}
+})
+
+</script> -->

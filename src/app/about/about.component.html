@@ -1,0 +1,161 @@
+
+<link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
+<div class="container-fluid guiid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="" id="guid">
+           
+                  <h2>About Us </h2>
+                  <nav aria-label="breadcrumb bg-light">
+                    <ol class="breadcrumb  lighten-3">
+                      <li class="breadcrumb-item"><i class="far fa-star mr-2 pink-text" aria-hidden="true"></i><a
+                          class="black-text" href="#">Home</a></li>
+                      <li class="breadcrumb-item pink-text active"><i class="far fa-star mx-2 pink-text" aria-hidden="true"></i>About Us
+                      </li>
+                    </ol>
+                  </nav>
+             
+        </div>
+        </div>
+    </div>
+</div>
+
+
+<section class="about">
+   <div class="container ">
+    <div class="row">
+        <div class="col-md-6">
+            <h2 class="mainH2">
+                Find The Perfect Gift,
+                <br> Every Time !
+            </h2>
+            <h6 class="mainH6">
+                ABOUT HEARTSTAR
+            </h6>
+            <div class="paragraph">
+                <p>
+                    Since opening in 2010, our shop has become the best in a city. Together we create an unparalleled selection of home accessories, art, pottery, apparel, handcrafted jewellery, baby gifts, coastal decor, gourmet fudge and local products.
+
+                </p>
+                <p>
+                    Custom orders, complimentary gift wrapping, and exemplary customer service are just a few of the reasons why HeartStar has been voted the Best Gift Shop in the city for the past seven years! We are waiting for you!
+                </p>
+
+                <button mdbBtn class="buttonAbout" type="button" color="elegant" mdbWavesEffect>More About US</button>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <img src="assets/about/a1.png" alt="">
+        </div>
+    </div>
+</div> 
+</section>
+
+<section>
+    <div class="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="fh2">Why Choose Heartstar? </h2>
+                    <h6 class="fh6"> FEATURES </h6>
+                </div>
+            </div>
+            <div class="row">
+                <div class="coll col-md-3 col-sm-6" *ngFor="let feature of Features">
+                    <div class="contFeatures ">
+                        <a class="LinkFeature" href="">
+                            <img class="featureImg" [src]="feature.imgUrl" alt="" srcset="">
+                        </a>
+                    </div>
+                    <div class="pFeature2">
+                    <a class="pFeature2"  [routerLink]="['/about' , feature.id,  feature.name]"><p >{{feature.name}}</p></a>        
+                    </div>
+                </div>
+
+               
+            </div>
+
+                
+                <!-- <div class="col-md-3 col-sm-6">
+                    <div>
+                        <a href="">
+                            <img src="http://heartstar.axiomthemes.com/wp-content/uploads/2017/10/033-gift.png" alt="" srcset="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div>
+                        <a href="">
+                            <img src="http://heartstar.axiomthemes.com/wp-content/uploads/2017/10/033-gift.png" alt="" srcset="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div>
+                        <a href="">
+                            <img src="http://heartstar.axiomthemes.com/wp-content/uploads/2017/10/033-gift.png" alt="" srcset="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div>
+                        <a href="">
+                            <img src="http://heartstar.axiomthemes.com/wp-content/uploads/2017/10/033-gift.png" alt="" srcset="">
+                        </a>
+                    </div>
+                </div> -->
+            
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="videO">
+        <div class="container-fluid mt-3 mb-5">
+
+            <!-- Section -->
+            <section class="Vido z-depth-1">
+          
+              <!-- Modal -->
+              <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
+                      <iframe id="player" class="embed-responsive-item" src="https://www.youtube.com/embed/7MUISDJ5ZZ4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          
+              <div class="row no-gutters">
+          
+                <div class="col-lg-6 order-md-2">
+                  <div class="view">
+                    <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Slides/img%20(152).jpg" alt="Video title">
+                    <div class="mask flex-center rgba-black-light">
+                      <a id="play" class="btn-floating btn-danger btn-lg" data-toggle="modal" data-target="#modal1"><i class="fas fa-play"></i></a>
+                    </div>
+                  </div>
+                </div>
+          
+                <div class="col-lg-6 mx-auto d-flex align-items-center text-white">
+                  <div class="px-4 py-4 py-lg-0">
+                    <h3 class="font-weight-normal mb-4">Give a Fresh Design to Your MDB</h3>
+                    <p class="mb-0">Fresh fellow even the whole is work outcome them. They original on mountains, drew the
+                      support time. The of to graduate. Into to is the to she at return understand every in there transmitting
+                      you've he the was and in finger.</p>
+                  </div>
+                </div>
+          
+              </div>
+              
+            </section>
+            <!-- Section -->
+          
+          </div>
+    </div>
+</section>
+
+<app-footer2></app-footer2>
+

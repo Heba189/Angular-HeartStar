@@ -1,0 +1,71 @@
+.header-H{
+    background-color: #ededee;
+}
+
+.card {
+        border-radius: 7px;
+}
+h4{
+    color: #fe3c5c !important;
+    font-weight: 300;
+}
+
+#calculatorSlider{    
+    display: flex !important;
+    color: #fe3c5c !important;
+    background-color: #fe3c5c;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.active{
+    background-color: transparent !important;
+    color:#fe3c5c !important;
+    border: none;
+    border-bottom: solid 1px wheat;
+}
+
+img{
+    margin-right: 45px;
+}
+
+.list-group-item{
+    text-align: center;
+    border-bottom: solid 1px wheat;
+}
+
+
+.tags button{
+    margin: 3px;
+    border-radius: none !important;
+   
+}
+
+
+.d1{
+margin-left: auto !important;
+
+}
+
+.icoon1{
+    font-size: 25px;
+    color: grey;
+}
+// .icoon1:hover{
+//     color: #fe3c5c;
+// }
+
+.showIcon{
+    display: inline-block !important;
+}
+
+// .icoon1:visited{
+//     color: #fe3c5c !important;
+// }
+
+.ListClass{
+    color: #fe3c5c !important;
+    
+    // background-color: #fe3c5c !important;
+}

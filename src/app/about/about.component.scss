@@ -1,0 +1,148 @@
+nav ol{
+    padding: 30px;
+    
+
+}
+
+#guid{
+    // width: 400px !important;
+    margin:  0 auto;
+    text-align: center;
+
+}
+
+.guiid{
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2{
+    color: #fe3c5c !important;
+    font-weight: 600;
+}
+
+.breadcrumb {
+
+    background-color: white;
+}
+//About section
+.about{
+    background-color:#ededee;
+    padding: 10px;
+    margin-top: 30px;
+    padding-top: 30px;
+}
+
+.mainH2{
+    font-weight: 600;
+    font-family: 'Dosis', sans-serif;
+    color: #372644 !important ;
+    
+    font-size: 3.6428rem;
+}
+
+.mainH6{
+    color: #fe3c5c !important;
+    margin : 20px 0px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .01em;
+}
+
+.paragraph{
+    color: #747474;
+    line-height: 1.5em;
+    margin: 40px auto;
+
+}
+
+.buttonAbout{
+    background-color: #fe3c5c !important; 
+    color:white !important;
+    padding: 15px;
+    font-weight: 600;
+    font-size: 20px;
+    margin: 30px auto;
+}
+.features{
+    background-color: white !important;
+    padding: 20px;
+    display: flex;
+    margin: 40px auto;
+}
+.fh2{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    color: #372644 !important;
+    letter-spacing: 1px;
+    line-height: 1.2em;
+    font-size: 3.6rem;
+    font-weight: 900;
+    font-family: 'Dosis', sans-serif;
+}
+
+.fh6{
+    color: #fe3c5c !important;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: 700;
+    margin: 20px auto;
+}
+
+.contFeatures{
+ 
+    padding: 30px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;  
+
+
+}
+.coll{
+    
+}
+ 
+.featureImg{
+   width: 40px;
+   height: 40px;
+}
+
+.LinkFeature{
+     justify-content: center;
+    align-items: center;
+    text-align: center;  
+     border-radius: 50%;
+    background-color:#ededee;
+    padding: 40px;
+}
+.pFeature2 p {
+    font-size: 10px !important;
+    text-align: center !important;
+    font-weight: 500 !important;
+    color: #747474 !important;
+}
+.pFeature2 a{
+  text-decoration: none;
+}
+.pFeature2 :hover{
+    color: #fe3c5c !important;
+}
+
+.col2{
+    justify-content: center;
+    align-items: center;
+    text-align: center;  
+}
+
+.Vido{
+    background-color:#fe3c5c !important; 
+}
+.pargraHere{
+    
+}

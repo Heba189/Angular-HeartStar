@@ -1,0 +1,263 @@
+<link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
+<div class="container-fluid guiid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="" id="guid">
+           
+                  <h2>Testiomonials </h2>
+                  <nav aria-label="breadcrumb bg-light">
+                    <ol class="breadcrumb  lighten-3">
+                      <li class="breadcrumb-item"><i class="far fa-star mr-2 pink-text" aria-hidden="true"></i><a
+                          class="black-text" href="#">Home</a></li>
+                      <li class="breadcrumb-item pink-text active"><i class="far fa-star mx-2 pink-text" aria-hidden="true"></i>Testiomonials
+                      </li>
+                    </ol>
+                  </nav>
+             
+        </div>
+        </div>
+    </div>
+</div>
+
+<!-- Section: Testimonials v.3 -->
+<section class="team-section" >
+
+ 
+    <div class="row rowHer" *ngFor="let user of users">
+  
+      <!--Grid column-->
+      <div class="col-md-12 mb-md-0 mb-5">
+  
+        <div class="testimonial">
+          <!--Avatar-->
+          <div class="row">
+              <div class="col-md-3">
+                   <div class="avatar mx-auto">
+                        <img [src]="user.imgUrl" class="rounded-circle z-depth-1 img-fluid">
+                    </div>
+              </div>
+              <div class="col-md-9">
+                    
+          <!--Content-->
+
+                <h4 class="font-weight-bold dark-grey-text mt-4">{{user.name}}</h4>
+               
+                <p class="font-weight-normal dark-grey-text">
+                    <mdb-icon fas icon="quote-left" class="pr-2"></mdb-icon>{{user.content}}</p>
+                <!--Review-->
+                <div class="orange-text">
+                    <mdb-icon fas icon="star"> </mdb-icon>
+                    <mdb-icon fas icon="star"> </mdb-icon>
+                    <mdb-icon fas icon="star"> </mdb-icon>
+                    <mdb-icon fas icon="star"> </mdb-icon>
+                    <mdb-icon fas icon="star-half"> </mdb-icon>
+                </div>
+              </div>
+          </div>
+         
+        </div>
+  
+      </div>
+      </div>
+
+      <div class="row rowHer" *ngFor="let new of newUser ;index as i ">
+         
+              <div class="col-md-12 mb-md-0 mb-5">
+                        <div class="testimonial">
+                          <!--Avatar-->
+                          <div class="row">
+                              <div class="col-md-3">
+                                  <div class="avatar mx-auto">
+                                        <img src="assets/users/testi-3.png" class="rounded-circle z-depth-1 img-fluid">
+                                    </div>
+                              </div>
+                              <div class="col-md-9">
+                                    
+                          <!--Content-->
+                
+                                <h4 class="font-weight-bold dark-grey-text mt-4">Heba</h4>
+                              
+                                <p class="font-weight-normal dark-grey-text">
+                                    <mdb-icon fas icon="quote-left" class="pr-2"></mdb-icon>{{new }}
+                                  
+                                </p> 
+                                <!--Review-->
+                                <div class="orange-text">
+                                    <mdb-icon fas icon="star"> </mdb-icon>
+                                    <mdb-icon fas icon="star"> </mdb-icon>
+                                    <mdb-icon fas icon="star"> </mdb-icon>
+                                    <mdb-icon fas icon="star"> </mdb-icon>
+                                    <mdb-icon fas icon="star-half"> </mdb-icon>
+                                </div>
+                              </div>
+                          </div>
+                        
+                        </div>
+                </div>
+        
+      </div>
+      <!--Grid column-->
+  
+
+<!-- <mdb-icon fas icon="redo-alt" class="blue-text"></mdb-icon>  -->
+        <button mdbBtn color="warning" type="button" class="m-5" >
+                <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                <span> <a  class="text-dark text-bolder"  [routerLink]="['/testiomonials' ,2 ,'MELISSA HOWARD ']"> Load MELISSA HOWARD (2)</a></span> 
+        </button>
+  </section>
+  <!-- Section: Testimonials v.3 -->
+
+
+
+<div class="AddTestimonial my-5 py-5">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-md-12">
+        <h2 class="addH2 my-5">
+          Add a Testimonial
+        </h2>
+        <h6 class="addH6">
+          YOUR FEEDBACK
+        </h6>
+      </div>
+    </div>
+
+    <!---- Directive form  ----->
+    <div class="row ">
+      <div class="col-md-12 d-flex justify-content-center align-items-center mx-auto">
+        <form class="form" #f="ngForm" name="form"  (ngSubmit)="f.form.valid && submit(f)">
+          <div class="form-group"  ngModelGroup="contact" #contact="ngModelGroup">
+            <!-- <div  *ngIf="!contact.valid">...</div> -->
+                  <div class="form-group">
+                    <label for="firstName"> Name*</label>
+                    <input
+                    required
+                    minlength="3"
+                    maxlength="10" 
+                    pattern="Heba" 
+                    ngModel 
+                    (change)="log(firstName)" 
+                    #firstName="ngModel" 
+                    type="text" name="firstName"
+                    class="form-control BgGrey py-4" 
+                    id="firstName">
+                        <div
+                        *ngIf="!firstName.valid && firstName.touched"
+                          class="alert  alert-danger my-1">
+
+                                <div *ngIf="firstName.errors.required">Name is required</div>
+                                <div *ngIf="firstName.errors.minlength">Name should be minimum {{ firstName.errors.minlength.requiredLength}} characters</div>
+                                <div *ngIf="firstName.errors.pattern">Name doesn't match the pattern</div>
+
+                        </div>
+                  </div>
+
+                  <!----------Commment---------->
+
+                <div class="form-group">
+                    <label for="comment">Your Testimonial*</label>
+                    <textarea 
+                    required
+                    type="text"
+                    ngModel
+                    name="comment"
+                    #comment="ngModel"
+                    class="form-control BgGrey"
+                    id="comment"></textarea>
+                </div>
+                <div
+                *ngIf="!comment.valid && comment.touched"
+                  class="alert  alert-danger my-1">
+                        <div *ngIf="comment.errors.required">Your Testimonial is required</div>
+                </div>
+         </div>
+       
+          
+          <div class="form-group">
+                <label for="email">Email*</label>
+                <input 
+                required
+                type="email"
+                name="email"
+                #email="ngModel"
+                ngModel
+                class="form-control BgGrey py-4"
+                id="email">
+          </div>
+
+          <div
+            *ngIf="!email.valid && email.touched"
+            class="alert  alert-danger my-1">
+                  <p>Email is required</p>
+          </div>
+
+         
+<!-- 
+          <div class="form-check mb-2 mr-sm-2">
+              <input
+               class="form-check-input BgGrey"
+                type="checkbox" 
+                ngModel
+                name="FormCheck"
+                #FormCheck="ngModel"
+                id="inlineFormCheck">
+
+              <label 
+              class="form-check-label"
+               for="inlineFormCheck">
+                I agree that my submitted data is being collected and stored. 
+                {{firstName.value}}
+              </label>
+          </div> -->
+
+          <!-------chackbox-------->
+              <div class="checkbox">
+                <label>
+                    <input [disabled]="f.invalid"  type="checkbox" ngModel name="FormCheck" #FormCheck="ngModel">  I agree that my submitted data is being collected and stored. 
+                </label>
+              </div> 
+                <p>
+                  <!-- {{f.value | json}} -->
+                </p>
+                <p class="PCheck" *ngIf="FormCheck.value && firstName.valid">
+                  Thank you {{firstName.value}}
+                </p>
+          <!-------end checkBox-------->
+        <!---------dropDown ----->
+                <div class="form-group">
+                  <label for="contactMethod" class="">Contact Method</label>
+                  <select   class="m-2 p-1 optionDrown" ngModel name="contactMethod" id="contactMethod" >
+                        <option 
+                            class="m-2 p-3 optionDrown" 
+                            *ngFor="let method of contactMethods" 
+                            [ngValue]="method"
+                             >
+                            {{method.name}} 
+                        </option>  
+
+                  </select>
+                </div>
+               <p  class="PCheck" *ngIf=" firstName.valid">
+                    Thanks, We will get back to you as soon as possible 
+               </p>
+                <!-- <P *ngIf=" firstName.valid && contactMethod.value  " >Thank You {{firstName.value}}, we will contact you by {{method.name}} </P> -->
+         <!---------End dropDown ----->
+
+
+        
+
+          <button [disabled]="f.invalid" class="btn btn-pink" (click)="onAdd(f.value)">Add Testimonial</button>
+          
+        
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <app-footer2></app-footer2>
+
+
+               
+      

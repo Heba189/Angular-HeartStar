@@ -1,0 +1,95 @@
+nav ol{
+    padding: 30px;
+    
+
+}
+
+#guid{
+    // width: 400px !important;
+    margin:  0 auto;
+    text-align: center;
+
+}
+
+.guiid{
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2{
+    color: #fe3c5c !important;
+    font-weight: 600;
+}
+
+.breadcrumb {
+
+    background-color: white;
+}
+
+
+
+
+
+section{
+     background-color:#ededee !important;
+     padding: 60px;
+}
+
+.rowHer{
+   background-color: white;
+    margin:30px 60px !important;
+    padding: 10px;
+    border-radius: 7px;
+    // border-bottom:#fe3c5c 2px solid;
+}
+
+.avatar img{
+    width: 90px ;
+    margin:20px 30px;
+}
+span a{
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.addH2{
+    font-weight: 800;
+    font-size: 60px;
+    font-family: 'Dosis', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.addH6{
+    font-weight: 700;
+    font-size: 25px;
+    font-family: 'Dosis', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#372644 !important;
+}
+
+.BgGrey{
+    background-color: #ededee !important;
+}
+
+/////////////////form styling//////////////
+
+.form-control.ng-touched.ng-invalid{
+
+    border: 2px solid #fe3c5c;
+}
+
+.PCheck{
+    color :#fe3c5c !important;
+}
+
+.optionDrown{
+    // border-radius: 7px;
+    // border: 1px solid #fe3c5c !important;
+}
+

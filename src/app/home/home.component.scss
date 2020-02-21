@@ -1,0 +1,507 @@
+
+
+.imgSur{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 30% auto;
+}
+.animated{
+    position: absolute;
+    left: 30%;
+    top: 50%;
+      
+}
+.carousel-caption{
+    // position: relative;
+    display: flex;
+}
+
+.h3Here{
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    margin:  auto;
+    font-weight: 900;
+    letter-spacing: .1em;
+    font-size: 50px;
+    font-family: 'Dosis', sans-serif;
+    margin-top: 20% !important;
+   
+
+
+}
+.pargraHere{
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    margin: 10px auto;
+    font-weight: 900;
+    letter-spacing: .1em;
+    font-size: 20px;
+    font-family: 'Dosis', sans-serif;
+}
+ol.carousel-indicators li{
+    list-style: circle !important;
+}
+
+.contBack{
+    margin-bottom: 0px !important;
+    background: url('http://heartstar.axiomthemes.com/wp-content/uploads/2018/09/bg_up-nocopyright.jpg') #ededee;
+    background-position: 100% 100%;
+    background-size: cover;
+    height: 250px !important;
+ 
+}
+
+
+
+.coll{
+   margin-bottom: 10px;
+   
+}
+
+.child{
+    margin: 10px 0px;  
+ 
+}
+
+img.imgPosition{
+    position: relative;
+    height: 488px !important;
+}
+// .relativ{
+//     //    position: relative;
+// }
+.Parg{
+
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    // transform: translate(-50%, -50%);
+    font-family: 'Dosis', sans-serif !important;
+    
+    font-size: 25px;
+
+
+}
+
+.sc_action_item_title span{
+    font-size: 40px !important;
+    font-weight: 800 !important;
+}
+.BTTN{
+    padding: 15PX;
+    display: block;
+    width: 50%;
+}
+.BTTN:hover{
+    color: #372644 !important;
+    background-color: #fdcf12 !important;
+}
+
+.creative{
+    color: grey;
+    font-weight: 900 !important;
+    letter-spacing: .1em;
+    font-size: 22px !important;
+}
+@media (max-width :769px){
+    .contBack{
+        display: none;
+    }
+
+   
+}
+
+////////////////////////////
+.filter{
+    border: none !important;
+    padding: 30px;
+}
+
+/////////////////////////////////////////////////////////
+
+.gallery {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+    -webkit-column-width: 33%;
+    -moz-column-width: 33%;
+    column-width: 33%; }
+    .gallery .pics {
+    -webkit-transition: all 350ms ease;
+    transition: all 350ms ease; }
+    .gallery .animation {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1); }
+    
+    @media (max-width: 450px) {
+    .gallery {
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+    -webkit-column-width: 100%;
+    -moz-column-width: 100%;
+    column-width: 100%;
+    }
+   
+
+    }
+    
+    @media (max-width: 600px) {
+        .btn.filter{
+            // margin: 20px 20px !important;
+            // justify-content: center;
+            // align-items: center;
+            // text-align: center;
+            // margin: 30px auto !important;
+
+            width: 90px !important;
+            
+        }
+        .btn.filter p {
+         display: none;
+            
+        }
+        .mmg{
+            width: 30px !important;
+            height: 30px !important;
+        }
+       
+    }
+
+
+
+    ///////////////////////////////////////////////////
+.saleSection{
+    margin-bottom: 0 !important;
+}
+    .h2Shop{
+        font-weight: 800;
+     
+        font-size: 60px;
+        font-family: 'Dosis', sans-serif;
+    }
+    .h5Shop{
+        font-family: 'Dosis', sans-serif;
+        color: #fe3c5c !important;
+        margin: 30px auto;
+    }
+
+.CategoryContainer{
+    margin-top: 210px !important;
+}
+///////////////////////start feature//////////////////////////
+.feature{
+    background-color:#ededee !important;
+    margin: 0 auto;
+    border: 1px solid #ededee;
+}
+
+.feature h2{
+    font-weight: 800;
+    font-size: 60px;
+    font-family: 'Dosis', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.feature h6{
+    font-weight: 700;
+    font-size: 25px;
+    font-family: 'Dosis', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.mother{
+    position: relative;
+}
+
+.MotherPargh{
+    position: absolute;
+    right: 15%;
+    top: 10%;
+    height: 30%;
+    width: 30%;
+}
+
+.MotherPargh h6{
+    font-weight: 700;
+    font-size: 18px;
+    font-family: 'Dosis', sans-serif;
+    color:#372644;
+}
+.MotherPargh h3{
+    font-weight: 700;
+    font-size: 30px;
+    font-family: 'Dosis', sans-serif;
+    color:#372644;
+}
+.BTTNMother {
+    width: 100px;
+    height: 60px;
+    padding: 5px;
+    margin-top: 20px;
+    color:#372644;
+    border-radius: 7px;
+   
+}
+.BTTNMother:hover{
+    background-color: #372644 !important;
+    color: #fdcf12 !important;
+   
+
+}
+.colFeat{
+    background-color: white !important;
+    
+   
+}
+.rFeature{
+    background-color: #ededee !important; 
+    padding: 10px 5px !important;
+}
+
+.f2{
+    margin-bottom: 30px !important;
+    padding-bottom: 20px !important;
+}
+
+@media (max-width: 720px) {
+   
+    .btom{
+        margin-bottom: 15px ;
+        
+    }
+   
+    .rFeature{
+        justify-content: center;
+        align-items: center;
+    }
+    .rFeature .col-md-12 img{
+        width: 370px !important;
+    }
+.MotherPargh{
+    right: 25%;
+}
+    .MotherPargh h6{
+        display: none;
+    }
+}
+
+ ///////////////////////////////////////// Testimonals ////////////////////////////////////////
+
+////////////////////// Start News////////////////////////////
+.News{
+    background-color: #ededee;
+    margin: 0px !important;
+}
+.News h3{
+    font-weight: 900;
+    font-size: 30px;
+    font-family: 'Dosis', sans-serif;
+    color:#372644;
+}
+.News h6{
+    font-weight: 700;
+    font-size: 18px;
+    font-family: 'Dosis', sans-serif;
+    color :#fe3c5c;
+}
+
+
+.fa-angle-right{
+    font-size: 20px !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    padding-top: 9px !important;
+    padding-bottom: 9px !important;
+}
+
+.btn-action {
+    border-radius: 50%;
+    max-width: 50px !important;
+    max-height: 50px !important;
+}
+////////////////////// End News  ////////////////////////////
+
+
+
+
+
+
+
+///////////////////////end Feature//////////////////////////
+.fa-angle-left,
+.fa-angle-right
+{
+    font-size: 40px;
+    color: white !important;
+}
+.testimonialContainer{
+    margin : 0px auto !important;
+    background-color: #4e1c76 !important;
+}
+.h2Testimonils {
+    font-weight: 800;
+     color: white !important;
+    font-size: 60px;
+    margin-top: 70px !important;
+    padding-top: 70px !important;
+    font-family: 'Dosis', sans-serif;
+}
+.fa-comments{
+    font-size: 60px;
+    color: #fe3c5c !important;
+}
+
+.wrapper-carousel-fix{
+    color: white !important;
+}
+
+
+
+.testimonialRight , .testimonialLeft{
+     background-color: #fdcf12 !important;
+    border-radius: 50% ;
+    width: 50px;
+    height: 50px;
+}
+
+.testimonialRight  i, .testimonialLeft i{
+font-size: 25px !important;
+color: #372644 !important;
+}
+.textName{
+color :#fdcf12 !important;
+
+}
+.IconColor{
+    color: #372644 !important;
+}
+.BackColor {
+    background-color:  #fdcf12 !important;
+}
+////////////////////////////////////////////// end testimonials ///////////////////////////////////////////
+
+/////////////// Sale Section///////////////////////
+
+.saleSection{
+    background-image: url('http://heartstar.axiomthemes.com/wp-content/uploads/2018/09/bg_mid-nocopyright.jpg');
+    background-position: 100% 100%;
+    background-size: cover;
+    max-height: 100%;
+    width: 100%;
+    position: relative;
+    border: none;
+    margin-bottom: 0px !important;
+    border: 1px solid #ededee ;
+}
+
+.saleColumn{
+    background-color: #4e1c76 !important;
+    width: 100%;
+    height: 550px !important;
+    position: absolute;
+    margin-bottom: 30px !important;
+}
+
+.imgSale{
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   left: 0%;
+   top: 10%; 
+}
+
+.ParghSale{
+    position: absolute;
+    left: 25%;
+    top: 25%;
+    width: 70%;
+    height: 70%;
+}
+
+.ParghSale h3{
+    font-weight: 800;
+     color: white;
+    font-size: 60px;
+    font-family: 'Dosis', sans-serif;
+}
+
+.ParghSale h6{
+    font-weight: 600 !important;
+     color: white;
+    font-size: 20px;
+    font-family: 'Dosis', sans-serif;
+}
+
+.ParghSale p{
+     color: white;
+    font-family: 'Dosis', sans-serif;
+}
+
+
+@media (max-width: 1200px) {
+   .saleColumn{
+     max-height: 340px !important;
+   }
+
+}
+
+
+@media (max-width: 769px) {
+    .saleColumn{
+      max-height: 340px !important;
+      margin-bottom: 150px !important;
+    }
+ .IMgGirl{
+     display: none;
+ }
+
+ .saleSection{
+    margin-bottom: 150px !important;
+ }
+
+.feature{
+    margin-top: 140px !important;
+    padding-top: 170px !important;
+}
+
+.feature h2{
+   
+    font-size: 40px;
+
+   
+}
+.feature h6{
+   
+    font-size: 20px;
+   
+}
+
+
+ }
+
+////////////////// end sale section////////////////
+
+[data-scroll] {
+    transition: opacity 1s;
+  }
+  [data-scroll="in"] {
+    opacity: 1;
+  }
+  [data-scroll="out"] {
+    opacity: 0;
+  }

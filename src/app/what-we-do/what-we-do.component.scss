@@ -1,0 +1,58 @@
+nav ol{
+    padding: 30px;
+    
+
+}
+
+#guid{
+    // width: 400px !important;
+    margin:  0 auto;
+    text-align: center;
+
+}
+
+.guiid{
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2{
+    color: #fe3c5c !important;
+    font-weight: 600;
+}
+
+.breadcrumb {
+
+    background-color: white;
+}
+.services{
+    background-color:#ededee !important;
+    margin-bottom: 30px !important;
+    padding-bottom: 30px !important;
+}
+
+.contCard{
+    margin-bottom: 30px !important;
+}
+.servicesRow{
+    margin: 50px !important;
+    padding: 40px;
+
+}
+
+mdb-card{
+    border-radius: 7px;
+}
+
+mdb-card-img{
+    border-radius: 7px;
+}
+
+h4{
+    font-weight: 1500px !important;
+}
+.btnEdit{
+    color: #fe3c5c !important;
+}
